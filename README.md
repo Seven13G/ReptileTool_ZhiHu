@@ -1,3 +1,3 @@
 # Seven13T
-This is my personal project.
-I will update this when it is free for me 
+This is a Selenium Framework Building project. And some of the codes comes from Autotask Corporation, QA Automation team.
+
