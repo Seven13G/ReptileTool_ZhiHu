@@ -27,8 +27,9 @@ And following is the steps to import the project.
  This is the source codes for the reptile tool.And you can use it to get the questions and answers from zhihu.com for certain keywords. Besides, it can output xml files for the results. It fit all the keywords search. Have a good time!
 <br>
 [zhihu website](www.zhihu.com)<br>
-## sample<br>
-` ``Java 
+#Sample<br>
+
+```java
 import java.io.UnsupportedEncodingException;
 
 import org.testng.annotations.Test;
@@ -59,6 +60,7 @@ public class Selenium_TestNg {
 	
 	questionZhihu.showMessage();
   }
+  
 }
-` ``
+```
 
