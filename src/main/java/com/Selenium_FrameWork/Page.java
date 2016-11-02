@@ -1,6 +1,9 @@
 package com.Selenium_FrameWork;
 
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.NoSuchWindowException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -19,6 +22,10 @@ public abstract class Page {
 		public static final int LONGWAIT = 20;
 
 		// Default constructor for all Page classes
+		public static String questionName;
+		public static String questionLink;
+		public static int questionNumber=0;
+		
 
 		public Page(WebDriver driver) {
 			this.driver = driver;
@@ -68,6 +75,30 @@ public abstract class Page {
 		public void dragAndDropSpecific(WebElement source, int xOffset, int yOffset){
 			Actions action = new Actions(driver); 
 			action.dragAndDropBy(source,xOffset,yOffset);
+		}
+		
+		// Check a Element to exist or not
+		public boolean verifyElementExsitByLocator(By locator) {
+			try {
+				driver.findElement(locator);
+				return true;
+			} catch (NoSuchElementException e) {
+				return false;
+			} catch (NoSuchWindowException e) {
+				return false;
+			}
+
+		}
+
+		// wait and check the Element Exist By tag name with the certain text
+		public boolean verifyElementExistByText(String tagName, String text) {
+			try {
+				WaitTool.waitForElementByLocator(By.xpath("//" + tagName + "[contains(text(),'" + text + "')]"));
+				return true;
+				
+			} catch (Exception e) {
+				return false;
+			}
 		}
 		
 }

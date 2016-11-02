@@ -1,14 +1,11 @@
 package com.Selenium_FrameWork;
 
-import java.io.File;
 import java.util.Set;
 
-import org.apache.commons.io.FileUtils;
+//import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.NoSuchWindowException;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -17,7 +14,7 @@ import org.openqa.selenium.support.PageFactory;
 public class SelGeneral {
 	public static WebDriver globalDriver;
 	public static String suiteName;
-	private static String direct;
+	public static String direct;
 
 	static int screenshotNumber = 1;
 
@@ -131,7 +128,7 @@ public class SelGeneral {
 		elementToClick.click();
 	}
 
-	public static String takeScreenshot() {
+	/*public static String takeScreenshot() {
 		try {
 			if (direct.isEmpty()) {
 				setDirect();
@@ -150,7 +147,7 @@ public class SelGeneral {
 			e.printStackTrace();
 		}
 		return null;
-	}
+	}*/
 
 	public static void setDirect() {
 		// direct = "c:/Results/" + SuiteName + "/" + timeStamp();

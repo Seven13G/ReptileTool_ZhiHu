@@ -15,10 +15,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class WaitTool {
 	// times to be used in longWait function
-	public static final int LONGWAIT = new Integer(General.getXML("LongWait")).intValue();
+	public static final int LONGWAIT = 5000;
 
 	// times to be used in a shortWait function
-	public static final int SHORTWAIT = new Integer(General.getXML("ShortWait")).intValue();
+	public static final int SHORTWAIT = 2000;
 
 	public static WebDriver globalDriver;
 
@@ -161,6 +161,7 @@ public class WaitTool {
 			afterPopUp = globalDriver.getWindowHandles();
 			afterPopUp.removeAll(beforePopUp);
 			timeOut -= 1;
+			System.out.println("size:"+afterPopUp.size());
 		} while (afterPopUp.size() != 1 && timeOut != 0);
 
 		if (afterPopUp.size() == 1) {

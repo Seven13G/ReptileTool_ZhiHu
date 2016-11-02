@@ -2,11 +2,10 @@ package com.Selenium_FrameWork;
 
 import org.testng.ITestContext;
 import org.testng.ITestResult;
-import org.testng.Reporter;
 import org.testng.TestListenerAdapter;
 
 public class ScreenshotTestListener extends TestListenerAdapter {
-	@Override
+	/*@Override
 	public void onTestFailure(ITestResult tr) {
 		// make it so screenshots show in reportNG
 		System.setProperty("org.uncommons.reportng.escape-output", "false");
@@ -27,7 +26,7 @@ public class ScreenshotTestListener extends TestListenerAdapter {
 		}
 		printString+="\n";
 		System.out.println(printString);
-	}
+	}*/
 
 	@Override
 	public void onTestSuccess(ITestResult tr){

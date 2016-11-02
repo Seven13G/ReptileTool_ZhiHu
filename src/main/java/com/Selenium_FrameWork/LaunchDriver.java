@@ -9,6 +9,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import com.Selenium_main.Baidu;
 import com.Selenium_main.Hao123;
+import com.Selenium_main.SearchZhihu;
 
 public class LaunchDriver {
 	
@@ -28,6 +29,12 @@ public class LaunchDriver {
 		return PageFactory.initElements(driver, Baidu.class);
 	}
 	
+	// start zhihu
+		public static SearchZhihu zhihu(String url) {
+			launchDriverChrome(url);
+			return PageFactory.initElements(driver, SearchZhihu.class);
+		}
+	
 	public static void launchDriverChrome(String url) {
 
 		DesiredCapabilities capabilites = new DesiredCapabilities();
@@ -36,7 +43,7 @@ public class LaunchDriver {
 		
 		//setup the location of chromedriver.exe
 		
-		System.setProperty("webdriver.chrome.driver", "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "C:\\Program Files\\Google\\Chrome\\Application\\chromedriver.exe");
 		driver = new ChromeDriver();	
 		SelGeneral.globalDriver = driver;
 		//WaitTool.globalDriver = driver;
