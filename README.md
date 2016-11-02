@@ -22,3 +22,29 @@ And following is the steps to import the project.
  <br>
 >>> * [Ruby](http://seleniumhq.github.io/selenium/docs/api/rb/)
 
+**# Introduce**<br/>
+**## This is the source codes for the reptile tool.And you can use it to get the questions and answers from zhihu.com for certain keywords. Besides, it can output xml files for the results. It fit all the keywords search. Have a good time!**
+<br/>
+[zhihu website](www.zhihu.com)<br/>
+**# sample**<br/>
+`import java.io.UnsupportedEncodingException;
+
+import org.testng.annotations.Test;
+
+import com.Selenium_FrameWork.LaunchDriver;
+
+public class Selenium_TestNg {
+	
+@Test
+  public void zhihu() throws UnsupportedEncodingException {
+	SearchZhihu searchZhihu = LaunchDriver.zhihu("https://www.zhihu.com/search");
+	//set the search keywords
+	searchZhihu.searchQuestion("韩春雨");
+	//expand all the contents
+	searchZhihu.clickMore();
+	//click one question and get in the link
+	QuestionZhihu questionZhihu = searchZhihu.clickLink();
+	//show and output the questions and answers
+	questionZhihu.showMessage();
+  }
+}`
